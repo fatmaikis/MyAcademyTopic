@@ -1,0 +1,42 @@
+﻿
+@model List<ResultBlogDto>
+
+@{
+    ViewData["Title"] = "Bloglar";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>#</th>
+        <th>Kapak Resmi</th>
+        <th>Blog Adı</th>
+        <th>Kategori</th>
+        <th>Açıklama</th>
+        <th>İşlemler</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <th>@item.BlogID</th>
+            <td><img src="@item.CoverImageUrl" /></td>
+            <th>@item.Title</th>
+            <th>@item.Category.CategoryName</th>
+            <td>@item.ShortDescription</td>
+            <td>
+                <a asp-action="DeleteBlog" asp-route-id="@item.BlogID" class="btn btn-outline-danger">Sil</a>
+                <a asp-action="UpdateBlog" asp-route-id="@item.BlogID" class="btn btn-outline-info">Güncelle</a>
+            </td>
+        </tr>
+
+
+    }
+
+</table>
+
+<a asp-action="CreateBlog" class="btn btn-outline-primary">Yeni Kategori Oluştur</a>
+
+
+
+
