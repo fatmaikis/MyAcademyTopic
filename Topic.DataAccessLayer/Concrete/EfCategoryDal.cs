@@ -15,5 +15,10 @@ namespace Topic.DataAccessLayer.Concrete
         public EfCategoryDal(TopicContext context) : base(context)
         {
         }
+
+        public List<Category> GetActiveCategories()
+        {
+            return _context.Categories.Where(x=>x.Status==true).ToList();
+        }
     }
 }

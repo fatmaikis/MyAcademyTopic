@@ -34,7 +34,7 @@ namespace Topic.API.Controllers
             var value = _categoryService.TGetById(id);
             var category = _mapper.Map<ResultCategoryDto>(value);
             return Ok(category);
-        
+
         }
 
         [HttpDelete("{id}")]
@@ -61,5 +61,14 @@ namespace Topic.API.Controllers
 
         }
 
+        [HttpGet("GetActiveCategories")]
+        public IActionResult GetActiveCategories()
+        {
+            var values = _categoryService.TGetActiveCategories();
+            var mappedResult = _mapper.Map<List<ResultCategoryDto>>(values);
+            return Ok(mappedResult);
+        }
+
     }
+    
 }

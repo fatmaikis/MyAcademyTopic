@@ -6,7 +6,7 @@
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
 }
 
-<table class="table table-bordered table-hover">
+<table class="table table-bordered table-hover custom-table">
     <tr>
         <th>#</th>
         <th>Kapak Resmi</th>
@@ -17,7 +17,6 @@
     </tr>
     @foreach (var item in Model)
     {
-
         <tr>
             <th>@item.BlogID</th>
             <td><img src="@item.CoverImageUrl" /></td>
@@ -25,18 +24,36 @@
             <th>@item.Category.CategoryName</th>
             <td>@item.ShortDescription</td>
             <td>
-                <a asp-action="DeleteBlog" asp-route-id="@item.BlogID" class="btn btn-outline-danger">Sil</a>
-                <a asp-action="UpdateBlog" asp-route-id="@item.BlogID" class="btn btn-outline-info">Güncelle</a>
+                <a asp-action="DeleteBlog" asp-route-id="@item.BlogID" class="btn btn-outline-danger"><i class="typcn typcn-trash"></i> Sil</a>
+                <a asp-action="UpdateBlog" asp-route-id="@item.BlogID" class="btn btn-outline-info"><i class="typcn typcn-edit"></i> Güncelle</a>
             </td>
         </tr>
+    }
+</table>
+<br />
+<a asp-action="CreateBlog" class="btn btn-outline-primary">Yeni Blog Oluştur</a>
 
-
+<style>
+    .custom-table {
+        border-collapse: collapse; 
+        width: 100%; 
     }
 
-</table>
+        .custom-table th, .custom-table td {
+            border: 1px solid #dee2e6; 
+            padding: 8px;
+            text-align: left;
+        }
 
-<a asp-action="CreateBlog" class="btn btn-outline-primary">Yeni Kategori Oluştur</a>
+        .custom-table th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
 
-
+        .custom-table td img {
+            max-width: 100px; 
+            height: auto; 
+        }
+</style>
 
 

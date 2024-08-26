@@ -13,6 +13,5 @@ namespace Topic.WebUI.Dtos.BlogDtos
         public string Image2 { get; set; }
 
         public int CategoryID { get; set; }
-       
     }
 }

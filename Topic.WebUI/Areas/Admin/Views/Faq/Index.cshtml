@@ -1,0 +1,66 @@
+﻿@model List<ResultFaqDto>
+@{
+    ViewData["Title"] = "Sık Sorulan Sorular";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<table class="table table-bordered table-hover custom-table">
+    <tr>
+        <th>#</th>
+        <th>Soru</th>
+        <th>Cevap</th>
+        <th>İşlemler</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.Question</td>
+            <td>@item.Answer</td>
+            <td>
+                <a asp-action="DeleteFaq" asp-route-id="@item.FAQID" class="btn btn-outline-danger"><i class="typcn typcn-trash"></i> Sil</a>
+                <a asp-action="UpdateFaq" asp-route-id="@item.FAQID" class="btn btn-outline-info"><i class="typcn typcn-edit"></i> Güncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+<a asp-action="CreateFaq" class="btn btn-outline-primary">Yeni Soru Oluştur</a>
+
+<style>
+    .custom-table {
+        border-collapse: collapse; 
+        width: 100%;
+    }
+
+        .custom-table th, .custom-table td {
+            border: 1px solid #dee2e6; 
+            padding: 8px;
+            text-align: left;
+        }
+
+        .custom-table th {
+            background-color: #f8f9fa; 
+            font-weight: bold;
+        }
+
+        .custom-table td {
+            background-color: #ffffff; 
+        }
+
+        .custom-table tr:nth-child(even) {
+            background-color: #f2f2f2; 
+        }
+
+        .custom-table a {
+            text-decoration: none; 
+        }
+
+        .custom-table td img {
+            max-width: 100px; 
+            height: auto; 
+        }
+</style>

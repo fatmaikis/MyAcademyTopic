@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+
+<section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-8 col-12 mx-auto">
+                <h1 class="text-white text-center">Keşfet. Öğren. Eğlen</h1>
+
+                <h6 class="text-center">Dünyanın dört bir yanındaki yaratıcılar için ilham verici bir platform.</h6>
+
+                <form method="get" class="custom-form mt-4 pt-2 mb-lg-0 mb-5" role="search">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text bi-search" id="basic-addon1">
+
+                        </span>
+
+                        <input name="keyword" type="search" class="form-control" id="keyword" placeholder="Tasarım, Kod, Alışveriş, Finans ..." aria-label="Ara">
+
+                        <button type="submit" class="form-control">Ara</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+@await Component.InvokeAsync("_DefaultCategoryComponent");
+
+@await Component.InvokeAsync("_DefaultBlogComponent");
+
+@await Component.InvokeAsync("_DefaultManuelComponent");
+
+@await Component.InvokeAsync("_DefaultFaqComponent");
+
+
+<section class="contact-section section-padding section-bg" id="section_5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12 col-12 text-center">
+                <h4 class="mb-5">Bizimler İletişime Geçebilirsiniz</h4>
+            </div>
+
+            <div class="col-lg-5 col-12 mb-4 mb-lg-0">
+                <iframe class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2144.681497174682!2d28.975944915927314!3d41.03049297930089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa643fb1e8c71%3A0x1d5c5795f283b3e1!2sİstiklal%20Caddesi!5e0!3m2!1str!2str!4v1688595069451!5m2!1str!2str" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-12 mb-3 mb-lg- mb-md-0 ms-auto">
+                <h4 class="mb-3">Ofis Adresi</h4>
+
+                <p>İstiklal Caddesi 123, Beyoğlu, İstanbul, 34430, Türkiye</p>
+
+                <hr>
+
+                <p class="d-flex align-items-center mb-1">
+                    <span class="me-2">Telefon</span>
+
+                    <a href="tel: 0555 555 55 55" class="site-footer-link">
+                        380-470-15
+                    </a>
+                </p>
+
+                <p class="d-flex align-items-center">
+                    <span class="me-2">Email</span>
+
+                    <a href="mailto:info@company.com" class="site-footer-link">
+                        info@company.com
+                    </a>
+                </p>
+            </div>
+
+          @*   <div class="col-lg-3 col-md-6 col-12 mx-auto">
+                <h4 class="mb-3">Dubai office</h4>
+
+                <p>Burj Park, Downtown Dubai, United Arab Emirates</p>
+
+                <hr>
+
+                <p class="d-flex align-items-center mb-1">
+                    <span class="me-2">Phone</span>
+
+                    <a href="tel: 110-220-3400" class="site-footer-link">
+                        110-220-3400
+                    </a>
+                </p>
+
+                <p class="d-flex align-items-center">
+                    <span class="me-2">Email</span>
+
+                    <a href="mailto:info@company.com" class="site-footer-link">
+                        info@company.com
+                    </a>
+                </p>
+            </div> *@
+
+        </div>
+    </div>
+</section>
+

@@ -19,8 +19,8 @@ namespace Topic.WebUI.Areas.Admin.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var values = await _client.GetFromJsonAsync<List<ResultBlogDto>>("blogs");
-            return View(values);
+            var values = await _client.GetFromJsonAsync<List<ResultBlogDto>>("blogs"); //uri ye istek atıyor attıktan sonra bunu json formatında alıyor aldığı veriyide t türünde(List<ResultBlogDto>) mapliyor
+            return View(values); 
         }
 
         public async Task<IActionResult> DeleteBlog(int id)
@@ -48,6 +48,29 @@ namespace Topic.WebUI.Areas.Admin.Controllers
         {
             await _client.PostAsJsonAsync("blogs", createBlogDto);
             return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> UpdateBlog(int id)
+        {
+            var categoryList = await _client.GetFromJsonAsync<List<ResultCategoryDto>>("categories");
+            List<SelectListItem> categories = (from x in categoryList
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.CategoryName,
+                                                   Value = x.CategoryID.ToString()
+                                               }).ToList();
+            ViewBag.categories = categories;
+            var values = await _client.GetFromJsonAsync<UpdateBlogDto>("blogs/" + id);
+            return View(values);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateBlog(UpdateBlogDto updateBlogDto)
+        {
+            await _client.PutAsJsonAsync("blogs",updateBlogDto);
+            return RedirectToAction("Index");
+
         }
 
     }

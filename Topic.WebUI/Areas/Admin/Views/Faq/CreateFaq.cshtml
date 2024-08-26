@@ -1,0 +1,18 @@
+﻿@model CreateFaqDto
+@{
+    ViewData["Title"] = "CreateFaq";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<form method="post">
+
+    <label>Soru</label>
+    <input type="text" asp-for="Question" class="form-control"/>
+    <br />
+    <label>Cevap</label>
+    <input type="text" asp-for="Answer" class="form-control" />
+
+    <br />
+    <button class="btn btn-outline-primary"><i class="typcn typcn-device-floppy"></i>Kaydet</button>
+</form>
+

@@ -20,6 +20,9 @@ builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<IManuelDal, EfManuelDal>();
 builder.Services.AddScoped<IManuelService, ManuelManager>();
 
+builder.Services.AddScoped<IFaqDal, EfFaqDal>();
+builder.Services.AddScoped<IFaqService, FaqManager>();
+
 builder.Services.AddScoped(typeof(IGenericDal<>), typeof(GenericRepository<>));
 
 builder.Services.AddDbContext<TopicContext>();  
