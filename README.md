@@ -6,8 +6,6 @@
 
 ![1 8](https://github.com/user-attachments/assets/f98d6149-8e2d-4a3a-8a1e-83728fcfcbb4)
 
-![2](https://github.com/user-attachments/assets/a624898d-694d-43e3-a0e8-9c08f2d9be65)
-
 ![3](https://github.com/user-attachments/assets/f9277b86-d6be-4b8e-8247-c91684de7840)
 
 ![4](https://github.com/user-attachments/assets/447150d0-e1ea-4d9a-86a0-f926702a041e)
