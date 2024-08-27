@@ -1,3 +1,38 @@
+# MyAcademy Topic Blog Projesi  
+M&Y Yazılım Eğitim Akademi Danışmanlık bünyesinde tamamladığım blog sitesidir. Bu proje, API tarafında gerçekleştirdiğimiz CRUD işlemlerini kullanarak UI tarafında blog işlemlerini yönetmemizi sağlar. API tarafında Silme, Güncelleme, Ekleme, Listeleme ve Id değerine göre getirme gibi temel CRUD işlemlerinin yanı sıra, özel entity metodlarını da entegre ettik.
+✓ Kullanıcılar, bu projeyi kullanarak kategorilere göre listelenen blogları görüntüleyebilir ve her bir blogun detaylarını inceleyebilirler. Ayrıca, sık sorulan sorular bölümündeki içerikleri de gözden geçirebilirler.
+✓ Admin panelinde ise yetkililer, kategorilere yeni bloglar ekleyebilir, mevcut blogları silebilir veya güncelleyebilirler. Sık sorulan sorular bölümüne yeni sorular ekleyebilir, var olanları silebilir veya güncelleyebilirler.
+Bu proje, hem kullanıcıların blogları kolayca yönetmelerini hem de yöneticilerin içerikleri etkin bir şekilde idare etmelerini sağlayan güçlü bir yapı sunar.
+
+Projede Oluşturulan Katmanlar :
+
+📌 Topic.API
+
+📌 Topic.BusinessLayer
+
+📌 Topic.DataAccessLayer
+
+📌 Topic.EntityLayer
+
+📌 OneMusic.WebUI
+
+
+Projede Kullanılan Teknolojiler :
+
+📌 .NET Core 8.0 ile geliştirildi.
+
+📌 ASP.NET Core Web API
+
+📌 Code First yaklaşımı
+
+📌 Veritabanı: MSSQL
+
+📌 Verileri AutoMapper kullanarak API ile eşleştirme
+
+📌 Sıfırdan bir API yazıp WebUI ile consume etme
+
+
+
 ![1](https://github.com/user-attachments/assets/e91a31db-8660-4cb9-9696-a82e6514c64c)
 
 ![2](https://github.com/user-attachments/assets/47219832-91b1-4dd0-a9dd-e2695448b94f)
